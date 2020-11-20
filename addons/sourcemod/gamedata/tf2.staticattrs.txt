@@ -1,0 +1,48 @@
+"Games"
+{
+	"tf"
+	{
+		"Functions"
+		{
+			"CEconItemDefinition::IterateAttributes"
+			{
+				"signature" 	"CEconItemDefinition::IterateAttributes"
+				"callconv" 		"thiscall"
+				"return" 		"void"
+				"this" 			"address"
+				"arguments"
+				{
+					"pKVItem"
+					{
+						"type" 	"int"	// IEconItemAttributeIterator*
+					}
+				}
+			}
+		}
+		"Offsets"
+		{
+			"CEconItemDefinition::m_pszItemBaseName"
+			{
+				"windows" 	"52"
+				"mac" 		"52"
+				"linux" 	"52"
+			}
+			"CEconItemDefinition::m_vecStaticAttributes"
+			{
+				"windows"	"28"
+				"linux"		"28"
+				"mac"		"28"
+			}
+		}
+		"Signatures"
+		{
+			"CEconItemDefinition::IterateAttributes"
+			{
+				"library"	"server"
+				"windows" 	"\x55\x8B\xEC\x83\xEC\x54\x53\x8B\xC1"
+				"linux" 	"@_ZNK19CEconItemDefinition17IterateAttributesEP26IEconItemAttributeIterator"
+				"mac" 		"@_ZNK19CEconItemDefinition17IterateAttributesEP26IEconItemAttributeIterator"
+			}
+		}
+	}
+}
