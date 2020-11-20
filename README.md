@@ -3,7 +3,11 @@
 
 ### It kinda sucks ###
 
-It more or less does its job but I've given up on it; decided to release it anyway. In TF2, there are different types of attributes (not just float, int, etc) that have special destructors that are called when the attribute is destroyed on an item. There's no all-encompassing method to detect if its one of these special attribute types, so it drops it out of the attribute vector without a whimper. Therefore, this plugin will leak memory if you are removing an attribute that takes a string, dynamic recipe component, world item placement, or item slot criteria.
+It more or less does its job but I've given up on it; decided to release it anyway. 
+
+In TF2, there are different types of attributes (static and dynamic). Dynamic attributes can be messed with with either TF2Items or TF2Attributes. Static attributes, however, are not networked. Therefore it is more difficult to mess with them. The closest thing you have is TF2Items' `PRESERVE_ATTRIBUTES` flag, but that's an all-or-nothing deal. This plugin removes specific static attributes designated by config.
+
+The main caveat with static attributes is that some of the special attribute types have destructors that are called when the attribute is destroyed on an item. There's no all-encompassing method to detect if an attribute takes one of these special types, so the plugin just drops it out of the attribute vector without a whimper. Therefore, this plugin will leak memory if you are removing an attribute that takes a string, dynamic recipe component, world item placement, or item slot criteria.
 
 ### Configuration ###
 
